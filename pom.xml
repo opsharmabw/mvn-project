@@ -54,7 +54,7 @@
                         <transformers>
                             <transformer
                                 implementation="org.apache.maven.plugins.shade.resource.ManifestResourceTransformer">
-                                <mainClass>com.mycompany.app.App</mainClass>
+                                <mainClass>com.opsharmabw.app.App</mainClass>
                             </transformer>
                         </transformers>
                     </configuration>
@@ -70,8 +70,16 @@
           <version>2.22.1</version>
         </plugin>
         <plugin>
-          <artifactId>maven-jar-plugin</artifactId>
-          <version>3.0.2</version>
+            <!-- Build an executable JAR -->
+            <artifactId>maven-jar-plugin</artifactId>
+            <version>3.0.2</version>
+            <configuration>
+                <archive>
+                    <manifest>
+                        <mainClass>com.opsharmabw.app.App</mainClass>
+                    </manifest>
+                </archive>
+            </configuration>
         </plugin>
         <plugin>
           <artifactId>maven-install-plugin</artifactId>
